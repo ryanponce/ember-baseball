@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Date of Birth</th>
+      <th>Age</th>
       <th>Number</th>
       <th>Position</th>
       <th>Batting Average</th>
@@ -15,13 +16,14 @@
 
   <tbody>
     {{#each model.players as |player|}}
-      <tr>
-        <td>{{player.fullName}}</td>
-        <td>{{player.dateOfBirth}}</td>
-        <td>{{player.number}}</td>
-        <td>{{player.position}}</td>
-        <td>{{player.battingAverage}}</td>
-      </tr>
+    <tr>
+      <td>{{player.fullName}}</td>
+      <td>{{moment-format player.dateOfBirth 'MM/DD/YYYY'}}</td>
+      <td>{{moment-diff player.dateOfBirth now precision='years'}}</td>
+      <td>{{player.number}}</td>
+      <td>{{player.position}}</td>
+      <td>{{player.battingAverage}}</td>
+    </tr>
     {{/each}}
   </tbody>
 </table>
