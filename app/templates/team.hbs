@@ -1,0 +1,9 @@
+<h2>{{model.name}}</h2>
+
+<h3>Players</h3>
+
+<ul>
+  {{#each model.players as |player|}}
+    <li>{{player.firstName}} - {{player.isFreeAgent}}</li>
+  {{/each}}
+</ul>

@@ -161,6 +161,6 @@ export default Factory.extend({
   },
 
   afterCreate(team, server) {
-    server.createList("player", 9, { team });
+    server.createList("player", 22, { team });
   }
 });
