@@ -1,9 +1,12 @@
 <h2>Players</h2>
 
+{{#link-to "players.new"}} Create New Plater {{/link-to}}
+
 <table class="w-full">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Team</th>
       <th>Date of Birth</th>
       <th>Age</th>
       <th>Number</th>
@@ -17,6 +20,7 @@
     {{#each model as |player|}}
     <tr>
       <td>{{player.fullName}}</td>
+      <td>{{player.team.name}}</td>
       <td>{{moment-format player.dateOfBirth 'MM/DD/YYYY'}}</td>
       <td>{{moment-diff player.dateOfBirth now precision='years'}}</td>
       <td>{{player.number}}</td>

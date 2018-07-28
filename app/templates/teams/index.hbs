@@ -1,5 +1,7 @@
 <h2>Teams</h2>
 
+{{#link-to "teams.new"}} Create New Team {{/link-to}}
+
 <ul>
   {{#each model as |team|}} {{#link-to "teams.team" team.id}}
   <li>{{team.name}}</li>
