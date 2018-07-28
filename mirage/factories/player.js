@@ -13,6 +13,10 @@ export default Factory.extend({
     return faker.image.avatar();
   },
 
+  battingAverage() {
+    return faker.random.number({ min: 100, max: 750 }) / 1000;
+  },
+
   isFreeAgent() {
     return faker.random.boolean();
   },
