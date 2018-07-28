@@ -1,5 +1,19 @@
-<div class="bg-blue p-4">
+<nav class="bg-blue p-4">
   <h1>⚾️ Ember Baseball</h1>
-</div>
+  <ul>
+    <li>
+      {{#link-to "teams"}} Teams {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "players"}} Players {{/link-to}}
+    </li>
+  </ul>
+</nav>
 
 {{outlet}}
+
+<footer class="bg-blue p-2">
+  <a href="https://github.com/ryanponce/ember-baseball">
+    Source Code
+  </a>
+</footer>

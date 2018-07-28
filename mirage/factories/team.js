@@ -148,10 +148,6 @@ export default Factory.extend({
     return faker.internet.color();
   },
 
-  streetAddress() {
-    return faker.address.streetAddress();
-  },
-
   city() {
     return faker.address.city();
   },

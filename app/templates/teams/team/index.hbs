@@ -1,0 +1,33 @@
+<h2 class="mb-4">{{model.name}}</h2>
+
+<h3>Roster</h3>
+
+<table class="w-full">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Age</th>
+      <th>Number</th>
+      <th>Position</th>
+      <th>Batting Average</th>
+      <th>Player Profile</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each model.players as |player|}}
+    <tr>
+      <td>{{player.fullName}}</td>
+      <td>{{moment-format player.dateOfBirth 'MM/DD/YYYY'}}</td>
+      <td>{{moment-diff player.dateOfBirth now precision='years'}}</td>
+      <td>{{player.number}}</td>
+      <td>{{player.position}}</td>
+      <td>{{player.battingAverage}}</td>
+      <td>
+        {{#link-to "player" player.id}} View More {{/link-to}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

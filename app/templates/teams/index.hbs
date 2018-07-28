@@ -1,0 +1,7 @@
+<h2>Teams</h2>
+
+<ul>
+  {{#each model as |team|}} {{#link-to "teams.team" team.id}}
+  <li>{{team.name}}</li>
+  {{/link-to}} {{/each}}
+</ul>

@@ -1,8 +1,6 @@
-<h2 class="mb-4">{{model.name}}</h2>
+<h2>Players</h2>
 
-<h3>Roster</h3>
-
-<table>
+<table class="w-full">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,11 +9,12 @@
       <th>Number</th>
       <th>Position</th>
       <th>Batting Average</th>
+      <th>Player Profile</th>
     </tr>
   </thead>
 
   <tbody>
-    {{#each model.players as |player|}}
+    {{#each model as |player|}}
     <tr>
       <td>{{player.fullName}}</td>
       <td>{{moment-format player.dateOfBirth 'MM/DD/YYYY'}}</td>
@@ -23,6 +22,9 @@
       <td>{{player.number}}</td>
       <td>{{player.position}}</td>
       <td>{{player.battingAverage}}</td>
+      <td>
+        {{#link-to "players.player" player.id}} View More {{/link-to}}j
+      </td>
     </tr>
     {{/each}}
   </tbody>
