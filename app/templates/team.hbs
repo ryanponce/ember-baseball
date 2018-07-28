@@ -1,9 +1,27 @@
-<h2>{{model.name}}</h2>
+<h2 class="mb-4">{{model.name}}</h2>
 
-<h3>Players</h3>
+<h3>Roster</h3>
 
-<ul class="list-reset">
-  {{#each model.players as |player|}}
-    <li>{{player.firstName}} - {{player.isFreeAgent}} - {{player.battingAverage}}</li>
-  {{/each}}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Number</th>
+      <th>Position</th>
+      <th>Batting Average</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each model.players as |player|}}
+      <tr>
+        <td>{{player.fullName}}</td>
+        <td>{{player.dateOfBirth}}</td>
+        <td>{{player.number}}</td>
+        <td>{{player.position}}</td>
+        <td>{{player.battingAverage}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
