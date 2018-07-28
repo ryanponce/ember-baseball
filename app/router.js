@@ -10,7 +10,7 @@ Router.map(function() {
   this.route("teams", function() {
     this.route("new");
 
-    this.route("team", { path: "/:team_id" }, function() {
+    this.route("team", { path: ":team_id" }, function() {
       this.route("edit");
     });
   });
@@ -18,7 +18,7 @@ Router.map(function() {
   this.route("players", function() {
     this.route("new");
 
-    this.route("player", { path: "/:player_id" }, function() {
+    this.route("player", { path: ":player_id" }, function() {
       this.route("edit");
     });
   });
