@@ -1,9 +1,21 @@
-<h2>Players</h2>
+<div>
+  <h2>Players</h2>
 
-{{#link-to "players.new"}} Create New Player {{/link-to}}
+  {{#link-to "players.new"}}
+    Create New Player
+  {{/link-to}}
+</div>
 
 <label for="freeAgent">Show Free Agents</label>
-{{input id="freeAgent" type="checkbox" checked=isFilteredByFreeAgent change=(action 'onFilterByFreeAgent') }}
+{{input
+  id="freeAgent"
+  type="checkbox"
+  checked=isFilteredByFreeAgent
+  change=(action 'onFilterByFreeAgent')}}
+
+{{#each filteredPlayers as |player|}}
+  {{player-card player=player}}
+{{/each}}
 
 <table class="w-full">
   <thead>

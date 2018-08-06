@@ -1,0 +1,11 @@
+{{#link-to "players.player" player.id}}
+  <div class="flex flex-row items-center">
+    <img src={{player.avatar}} alt={{player.fullName}} class="w-50 h-50 rounded-full mr-8" />
+
+    <h3 class="mr-8 capitalize">{{player.fullName}}</h3>
+
+    <p class="mr-8 capitalize">{{player.team.name}}</p>
+
+    <p class="mr-8 capitalize">{{player.position}}</p>
+  </div>
+{{/link-to}}
