@@ -1,21 +1,9 @@
-<nav class="bg-blue p-4">
-  <h1>
-    {{#link-to "index"}} ⚾️ Ember Baseball {{/link-to}}
-  </h1>
-  <ul>
-    <li>
-      {{#link-to "teams"}} Teams {{/link-to}}
-    </li>
-    <li>
-      {{#link-to "players"}} Players {{/link-to}}
-    </li>
-  </ul>
-</nav>
+<div class="font-sans bg-white min-h-screen text-black">
+  <div class="mb-8">
+    {{site-nav}}
+  </div>
 
-{{outlet}}
-
-<footer class="bg-blue p-2">
-  <a href="https://github.com/ryanponce/ember-baseball">
-    Source Code
-  </a>
-</footer>
+  <div class="px-4">
+    {{outlet}}
+  </div>
+</div>

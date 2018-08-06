@@ -5,5 +5,11 @@ export default Route.extend({
     return this.get("store").findRecord("team", params.team_id, {
       include: "players"
     });
+  },
+
+  actions: {
+    deleteTeam(team) {
+      return team.destroyRecord().then(() => this.transitionTo("teams"));
+    }
   }
 });

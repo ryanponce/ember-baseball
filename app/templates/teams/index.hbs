@@ -1,9 +1,11 @@
-<h2>Teams</h2>
+<div class="mb-8 flex flex-row items-center justify-between">
+  <h2>Teams</h2>
 
-{{#link-to "teams.new"}} Create New Team {{/link-to}}
+  {{#link-to "teams.new"}}
+    Create New Team
+  {{/link-to}} 
+</div>
 
-<ul>
-  {{#each model as |team|}} {{#link-to "teams.team" team.id}}
-  <li>{{team.name}}</li>
-  {{/link-to}} {{/each}}
-</ul>
+{{#each model as |team|}}
+  {{team-card team=team}}
+{{/each}}

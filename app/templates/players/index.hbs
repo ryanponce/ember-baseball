@@ -1,6 +1,9 @@
 <h2>Players</h2>
 
-{{#link-to "players.new"}} Create New Plater {{/link-to}}
+{{#link-to "players.new"}} Create New Player {{/link-to}}
+
+<label for="freeAgent">Show Free Agents</label>
+{{input id="freeAgent" type="checkbox" checked=isFilteredByFreeAgent change=(action 'onFilterByFreeAgent') }}
 
 <table class="w-full">
   <thead>
@@ -17,7 +20,7 @@
   </thead>
 
   <tbody>
-    {{#each model as |player|}}
+    {{#each filteredPlayers as |player|}}
     <tr>
       <td>{{player.fullName}}</td>
       <td>{{player.team.name}}</td>

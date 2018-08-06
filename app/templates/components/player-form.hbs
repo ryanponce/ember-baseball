@@ -1,0 +1,110 @@
+<form {{action 'savePlayer' player on="submit"}} class="flex flex-col">
+  <label for="firstName">First Name</label>
+  {{input
+    id="firstName"
+    type="text"
+    value=player.firstName
+    placeholder="Clayton"
+    required=true }}
+
+  <label for="lastName">Last Name</label>
+  {{input
+    id="lastName"
+    type="text"
+    value=player.lastName
+    placeholder="Kershaw"
+    required=true }}
+
+  <label for="avatar">Photo</label>
+  {{input
+    id="avatar"
+    type="text"
+    value=player.avatar
+    placeholder="http://mlb.mlb.com/mlb/images/players/head_shot/477132.jpg"
+    required=true}}
+
+  <label for="dateOfBirth">Date of Birth</label>
+  {{input
+    id="dateOfBirth"
+    value=(moment-format player.dateOfBirth 'YYYY-MM-DD')
+    type="date"
+    placeholder="03/19/1988"
+    required=true }}
+
+  <label for="number">Number</label>
+  {{input
+    id="number"
+    value=player.number
+    type="number"
+    placeholder="22"
+    required=true }}
+
+  <label for="position"></label>
+  <select id="position" value={{player.position}} name="position" required>
+    <option disabled selected>Choose a Position</option>
+    <option selected={{eq player.position "first base"}} value="first base">
+      First Base
+    </option>
+    <option selected={{eq player.position "second base"}} value="second base">
+      Second Base
+    </option>
+    <option selected={{eq player.position "shortstop"}} value="shortstop">
+      Shortstop
+    </option>
+    <option selected={{eq player.position "third base"}} value="third base">
+      Third Base
+    </option>
+    <option selected={{eq player.position "pitcher"}} value="pitcher">
+      Pitcher
+    </option>
+    <option selected={{eq player.position "catcher"}} value="catcher">
+      Catcher
+    </option>
+    <option selected={{eq player.posiiton "right field"}} value="right field">
+      Right Field
+    </option>
+    <option selected={{eq player.position "center field"}} value="center field">
+      Center Field
+    </option>
+    <option selected={{eq player.position "left field"}} value="left field">
+      Left Field
+    </option>
+  </select>
+
+  <label for="battingAverage">Batting Average</label>
+  {{input
+    id="battingAverage"
+    value=player.battingAverage
+    type="number"
+    min=0
+    max=1
+    step="0.001"
+    placeholder="0.500"
+    required=true }}
+
+  <label for="isFreeAgent">Free Agent</label>
+  {{input
+    id="isFreeAgent"
+    checked=player.isFreeAgent
+    type="checkbox"
+    placeholder="false"}}
+
+  <label for="team">Team</label>
+  <select
+    name="team"
+    id="team"
+    value={{player.team.id}}
+    onchange={{action 'setTeam' value='target.value' }}
+    required>
+    <option disabled selected>Choose a Team</option>
+    {{#each teams as |team|}}
+      <option
+        selected={{eq team.id player.team.id}}
+        value={{team.id}}>
+        {{team.name}}
+      </option>
+    {{/each}}
+  </select>
+
+  <button type="submit">Save Player</button>
+</form>

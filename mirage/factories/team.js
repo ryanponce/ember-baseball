@@ -138,10 +138,8 @@ const commonAnimals = [
 ];
 
 export default Factory.extend({
-  name() {
-    return `${faker.address.city()} ${faker.random.arrayElement(
-      commonAnimals
-    )}s`;
+  mascot() {
+    return `${faker.random.arrayElement(commonAnimals)}`;
   },
 
   primaryColor() {

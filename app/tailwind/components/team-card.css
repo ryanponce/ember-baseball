@@ -1,0 +1,16 @@
+.team-link {
+  @apply .no-underline;
+}
+
+.team-card {
+  @apply .p-8 .my-4 .bg-white .text-black .rounded .shadow-md .flex .flex-row .items-center .justify-between;
+  transition: box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  @apply .shadow-lg;
+}
+
+.team-name {
+  @apply .text-black .capitalize;
+}

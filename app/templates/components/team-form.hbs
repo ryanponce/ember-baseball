@@ -1,0 +1,34 @@
+<form {{action 'saveTeam' on="submit"}} class="flex flex-col">
+  <label for="name">Mascot</label>
+  {{input
+    id="name"
+    value=team.mascot
+    type="text"
+    placeholder="Dodgers"
+    required=true}}
+
+  <label for="city">City</label>
+  {{input
+    id="city"
+    value=team.city
+    type="text"
+    placeholder="Los Angeles"
+    required=true}}
+
+  <label for="state">State</label>
+  {{input
+    id="state"
+    value=team.state
+    type="text"
+    placeholder="California"
+    required=true}}
+
+  <label for="primaryColor">Color</label>
+  {{input
+    id="primaryColor"
+    value=team.primaryColor
+    type="color"
+    required=true}}
+
+  <button type="submit">Save</button>
+</form>
